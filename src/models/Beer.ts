@@ -3,16 +3,33 @@ export type Hop = {
   amount: UnitAmount
   add: string
   attribute: string
-}
+} | null
 
 export type UnitAmount = {
   value: number
   unit: string
-}
+} | null
 
 export type Malt = {
   name: string
   amount: UnitAmount
+} | null
+
+export type MashTemp = {
+  temp: UnitAmount
+  duration: number
+}
+
+export type Method = {
+  mash_temp: MashTemp[]
+  fermentation: { temp: UnitAmount }
+  twist: string | null
+}
+
+export type Ingredients = {
+  malt: Malt[]
+  hops: Hop[]
+  yeast: string
 }
 
 export type Beer = {
@@ -23,25 +40,17 @@ export type Beer = {
   description: string
   image_url: string
   abv: number
-  ibu: number
+  ibu: number | null
   target_fg: number
   target_og: number
-  ebc: number
-  srm: number
-  ph: number
+  ebc: number | null
+  srm: number | null
+  ph: number | null
   attenuation_level: number
   volume: UnitAmount
   boil_volume: UnitAmount
-  method: {
-    mash_temp: { temp: UnitAmount; duration: number }[]
-    fermentation: { temp: UnitAmount }
-    twist: string | null
-  }
-  ingredients: {
-    malt: Malt[]
-    hops: Hop[]
-    yeast: string
-  }
+  method: Method
+  ingredients: Ingredients
   food_pairing: string[]
   brewers_tips: string
   contributed_by: string

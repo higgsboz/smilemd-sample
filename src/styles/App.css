@@ -1,0 +1,34 @@
+#root{
+  box-sizing: border-box;
+  height: 100%;
+}
+
+html, body {
+  height: 100%;
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}    
+
+.container {
+  height: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+}
+
+.MuiDataGrid-viewport,
+.MuiDataGrid-row,
+.MuiDataGrid-renderingZone {
+  max-height: fit-content !important;
+}
+
+.MuiDataGrid-cell {
+  max-height: fit-content !important;
+  overflow: auto;
+  white-space: initial !important;
+  line-height: 16px !important;
+  display: flex !important;
+  align-items: center;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
