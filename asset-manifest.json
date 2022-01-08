@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/smilemd-sample/static/css/main.b7781b9d.css",
+    "main.js": "/smilemd-sample/static/js/main.a269512a.js",
+    "static/js/787.7ea8dc90.chunk.js": "/smilemd-sample/static/js/787.7ea8dc90.chunk.js",
+    "index.html": "/smilemd-sample/index.html",
+    "main.b7781b9d.css.map": "/smilemd-sample/static/css/main.b7781b9d.css.map",
+    "main.a269512a.js.map": "/smilemd-sample/static/js/main.a269512a.js.map",
+    "787.7ea8dc90.chunk.js.map": "/smilemd-sample/static/js/787.7ea8dc90.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b7781b9d.css",
+    "static/js/main.a269512a.js"
+  ]
+}
