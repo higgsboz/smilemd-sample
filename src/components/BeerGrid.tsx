@@ -10,16 +10,14 @@ import {
   GridSortModel,
 } from '@mui/x-data-grid'
 
-import { useQuery } from 'react-query'
 import { Alert, Box } from '@mui/material'
 import { yellow } from '@mui/material/colors'
-import { getBeer } from '../queries/Beer'
-import { Beer } from '../models/Beer'
 import BeerName from './BeerName'
 import BeerDescription from './BeerDescription'
+import { useBeerData } from '../hooks/useBeerData'
 
 function BeerGrid(): JSX.Element {
-  const queryState = useQuery<Beer[] | null, Error>('beer', () => getBeer())
+  const { isLoading, isError, data } = useBeerData()
 
   const [sortModel, setSortModel] = React.useState<GridSortModel>([
     {
@@ -65,7 +63,7 @@ function BeerGrid(): JSX.Element {
 
   const dataGridBeerData: GridRowsProp = useMemo(() => {
     return (
-      queryState.data?.map((beer) => {
+      data?.map((beer) => {
         const dryHopped = !!beer.ingredients.hops.find(
           (hop) => hop?.add === 'dry hop'
         )
@@ -93,7 +91,15 @@ function BeerGrid(): JSX.Element {
         }))(beer)
       }) ?? []
     )
-  }, [queryState.data])
+  }, [data])
+
+  if (isError) {
+    return (
+      <Alert severity="error" data-testid="errorAlert">
+        There was an issue loading the data. Please refresh the page
+      </Alert>
+    )
+  }
 
   return (
     <Box
@@ -106,10 +112,11 @@ function BeerGrid(): JSX.Element {
           bgcolor: yellow[200],
         },
       }}
+      data-testid="beerDataGrid"
     >
-      {!queryState.isError && (
+      {!isError && (
         <DataGrid
-          loading={queryState.isLoading}
+          loading={isLoading}
           rows={dataGridBeerData}
           columns={columns}
           sortingOrder={['desc', 'asc']}
@@ -117,11 +124,6 @@ function BeerGrid(): JSX.Element {
           onSortModelChange={(model) => setSortModel(model)}
           getRowClassName={(params) => (params.row.dryHopped ? 'dryhop' : '')}
         />
-      )}
-      {queryState.isError && (
-        <Alert severity="error">
-          There was an issue loading the data. Please refresh the page
-        </Alert>
       )}
     </Box>
   )

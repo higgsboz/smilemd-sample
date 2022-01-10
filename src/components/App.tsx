@@ -1,22 +1,16 @@
 /* eslint-disable camelcase */
 import React from 'react'
+import { QueryClient, QueryClientProvider } from 'react-query'
 import '../styles/App.css'
+import Home from './Home'
 
-import { Box, Container } from '@mui/material'
-import BeerGrid from './BeerGrid'
+const queryClient = new QueryClient()
 
 function App(): JSX.Element {
   return (
-    <div className="container">
-      <Container maxWidth="lg" sx={{ height: '100%' }}>
-        <Box display="flex" flexDirection="column" height="100%">
-          <Box textAlign="center">
-            <h1>Brewdog Beer List</h1>
-          </Box>
-          <BeerGrid />
-        </Box>
-      </Container>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <Home />
+    </QueryClientProvider>
   )
 }
 
