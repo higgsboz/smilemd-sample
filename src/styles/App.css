@@ -16,6 +16,11 @@ html, body {
   padding: 8px;
 }
 
+
+/* 
+  The following styles are present to make the rows of the MuiDataGrid 
+  resize depending on the amount of text that is in the cells
+*/
 .MuiDataGrid-viewport,
 .MuiDataGrid-row,
 .MuiDataGrid-renderingZone {

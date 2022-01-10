@@ -1,8 +1,8 @@
 import { renderHook } from '@testing-library/react-hooks'
-import { mswServer } from './utils/msw-server'
-import { beersExceptionHandler, noBeersHandler } from './utils/handlers'
-import { createWrapper } from './utils/utils'
-import { useBeerData } from '../hooks/useBeerData'
+import { mswServer } from '../utils/msw-server'
+import { beersExceptionHandler, noBeersHandler } from '../utils/handlers'
+import { createWrapper } from '../utils/utils'
+import { useBeerData } from '../../hooks/useBeerData'
 
 describe('query hook', () => {
   it('retrieves data when successful', async () => {

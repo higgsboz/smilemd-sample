@@ -1,8 +1,8 @@
 import React from 'react'
-import BeerGrid from '../components/BeerGrid'
-import { renderWithClient } from './utils/utils'
-import { mswServer } from './utils/msw-server'
-import { beersExceptionHandler, delayedBeersHandler } from './utils/handlers'
+import { renderWithClient } from '../utils/utils'
+import { mswServer } from '../utils/msw-server'
+import { beersExceptionHandler, delayedBeersHandler } from '../utils/handlers'
+import BeerGrid from '../../components/Beer/BeerGrid'
 
 describe('BeerGrid component', () => {
   it('displays loading indicator while loading', () => {

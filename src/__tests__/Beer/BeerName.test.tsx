@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import BeerName from '../components/BeerName'
+import BeerName from '../../components/Beer/BeerName'
 
 describe('BeerName component', () => {
   it('renders name and image', async () => {

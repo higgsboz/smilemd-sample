@@ -3,7 +3,8 @@ import React from 'react'
 import '../styles/App.css'
 
 import { Box, Container } from '@mui/material'
-import BeerGrid from './BeerGrid'
+
+import BeerGrid from './Beer/BeerGrid'
 
 function App(): JSX.Element {
   return (

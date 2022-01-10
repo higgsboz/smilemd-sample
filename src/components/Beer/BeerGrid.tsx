@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import React, { useMemo } from 'react'
-import '../styles/App.css'
+import '../../styles/App.css'
 
 import {
   DataGrid,
@@ -14,7 +14,7 @@ import { Alert, Box } from '@mui/material'
 import { yellow } from '@mui/material/colors'
 import BeerName from './BeerName'
 import BeerDescription from './BeerDescription'
-import { useBeerData } from '../hooks/useBeerData'
+import { useBeerData } from '../../hooks/useBeerData'
 
 function BeerGrid(): JSX.Element {
   const { isLoading, isError, data } = useBeerData()

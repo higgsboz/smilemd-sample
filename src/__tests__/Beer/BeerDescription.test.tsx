@@ -1,7 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import BeerName from '../components/BeerName'
-import BeerDescription from '../components/BeerDescription'
+import BeerDescription from '../../components/Beer/BeerDescription'
 
 describe('BeerDescription component', () => {
   it('renders description with no warning', async () => {
