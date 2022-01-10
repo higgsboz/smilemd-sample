@@ -1,7 +1,7 @@
 import React from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import '../styles/App.css'
-import Home from './Home'
+import Home from './pages/Home'
 
 const queryClient = new QueryClient()
 

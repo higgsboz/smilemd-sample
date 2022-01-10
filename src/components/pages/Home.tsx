@@ -1,15 +1,15 @@
 /* eslint-disable camelcase */
 import React from 'react'
-import '../styles/App.css'
+import '../../styles/App.css'
 
 import { Box, Container } from '@mui/material'
 
-import BeerGrid from './Beer/BeerGrid'
+import BeerGrid from '../Beer/BeerGrid'
 
 function App(): JSX.Element {
   return (
     <div className="container">
-      <Container maxWidth="lg" sx={{ height: '100%' }}>
+      <Container maxWidth="lg" sx={{ height: '100%', pb: '20px' }}>
         <Box display="flex" flexDirection="column" height="100%">
           <Box textAlign="center">
             <h1>Brewdog Beer List</h1>

@@ -26,6 +26,7 @@ function BeerGrid(): JSX.Element {
     },
   ])
 
+  // Defines the cells for the columns and how they should be rendered
   const columns: GridColDef[] = [
     {
       field: 'name',
@@ -61,6 +62,7 @@ function BeerGrid(): JSX.Element {
     },
   ]
 
+  // Converts the data from the API call to data readable by DataGrid
   const dataGridBeerData: GridRowsProp = useMemo(() => {
     return (
       data?.map((beer) => {
