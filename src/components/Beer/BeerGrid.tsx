@@ -113,6 +113,7 @@ function BeerGrid(): JSX.Element {
         '& .dryhop.MuiDataGrid-row:hover': {
           bgcolor: yellow[200],
         },
+        height: '100%',
       }}
       data-testid="beerDataGrid"
     >
