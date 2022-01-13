@@ -11,8 +11,6 @@ Within the `src` file there are a few folders:
   * Components are separated based on business requirements. `App` is a top level component because it is the entry point to the app. `Pages` only contains `Home` for this project as there is only one page in the app. `Beer` contains the components necessary to create the main table component that holds the beer data.
 * `hooks`
   * Data is being fetched using the `react-query` library. For this, a custom hook was created for the purpose of handling the query result. This file is found here.
-* `models`
-  * This folder contains the typescript model for beers as was best interpreted from the api endpoint.
 * `queries`
   * This folder contains the api calls that `react-query` uses to fetch data.
 * `styles`
