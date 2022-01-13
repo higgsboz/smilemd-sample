@@ -7,7 +7,7 @@ import { Box, Container, Grid } from '@mui/material'
 import BeerGrid from '../Beer/BeerGrid'
 import Legend from '../Beer/Legend'
 
-function Home(): JSX.Element {
+function Home() {
   return (
     <div className="container">
       <Container maxWidth="xl" sx={{ height: '100%', pb: '20px' }}>

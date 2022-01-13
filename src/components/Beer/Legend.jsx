@@ -3,7 +3,7 @@ import React from 'react'
 import { Box, Card, CardContent, Typography } from '@mui/material'
 import { yellow } from '@mui/material/colors'
 
-function Legend(): JSX.Element {
+function Legend() {
   return (
     <Card
       variant="outlined"

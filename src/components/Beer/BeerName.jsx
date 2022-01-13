@@ -1,12 +1,7 @@
 import React from 'react'
 import { Box } from '@mui/material'
 
-type Props = {
-  name: string
-  imageUrl: string
-}
-
-function BeerName({ name, imageUrl }: Props): JSX.Element {
+function BeerName({ name, imageUrl }) {
   return (
     <Box
       sx={{

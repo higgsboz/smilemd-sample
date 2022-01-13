@@ -2,12 +2,7 @@ import React from 'react'
 import { Box } from '@mui/material'
 import { Warning } from '@mui/icons-material'
 
-type Props = {
-  description: string
-  hasLactose: boolean
-}
-
-function BeerDescription({ description, hasLactose }: Props): JSX.Element {
+function BeerDescription({ description, hasLactose }) {
   return (
     <div>
       <span>{description}</span>

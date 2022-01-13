@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable no-console */
 
 // jest-dom adds custom jest matchers for asserting on DOM nodes.

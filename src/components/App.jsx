@@ -5,7 +5,7 @@ import Home from './pages/Home'
 
 const queryClient = new QueryClient()
 
-function App(): JSX.Element {
+function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Home />

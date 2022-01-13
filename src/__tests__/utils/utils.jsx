@@ -1,9 +1,9 @@
 /* eslint-disable func-names */
-import { render, RenderResult } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import * as React from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
-const createTestQueryClient = (): QueryClient =>
+const createTestQueryClient = () =>
   new QueryClient({
     defaultOptions: {
       queries: {
@@ -12,14 +12,14 @@ const createTestQueryClient = (): QueryClient =>
     },
   })
 
-export function renderWithClient(ui: React.ReactElement): RenderResult {
+export function renderWithClient(ui) {
   const testQueryClient = createTestQueryClient()
   const { rerender, ...result } = render(
     <QueryClientProvider client={testQueryClient}>{ui}</QueryClientProvider>
   )
   return {
     ...result,
-    rerender: (rerenderUi: React.ReactElement) =>
+    rerender: (rerenderUi) =>
       rerender(
         <QueryClientProvider client={testQueryClient}>
           {rerenderUi}
@@ -28,13 +28,9 @@ export function renderWithClient(ui: React.ReactElement): RenderResult {
   }
 }
 
-export function createWrapper(): ({
-  children,
-}: {
-  children: JSX.Element | JSX.Element[]
-}) => JSX.Element {
+export function createWrapper() {
   const testQueryClient = createTestQueryClient()
-  return function ({ children }: { children: JSX.Element | JSX.Element[] }) {
+  return function ({ children }) {
     return (
       <QueryClientProvider client={testQueryClient}>
         {children}

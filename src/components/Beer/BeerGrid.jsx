@@ -1,14 +1,6 @@
 /* eslint-disable camelcase */
 import React, { useMemo } from 'react'
-import '../../styles/App.css'
-
-import {
-  DataGrid,
-  GridColDef,
-  GridRowsProp,
-  GridSortDirection,
-  GridSortModel,
-} from '@mui/x-data-grid'
+import { DataGrid } from '@mui/x-data-grid'
 
 import { Alert, Box } from '@mui/material'
 import { yellow } from '@mui/material/colors'
@@ -16,18 +8,18 @@ import BeerName from './BeerName'
 import BeerDescription from './BeerDescription'
 import { useBeerData } from '../../hooks/useBeerData'
 
-function BeerGrid(): JSX.Element {
+function BeerGrid() {
   const { isLoading, isError, data } = useBeerData()
 
-  const [sortModel, setSortModel] = React.useState<GridSortModel>([
+  const [sortModel, setSortModel] = React.useState([
     {
       field: 'abv',
-      sort: 'desc' as GridSortDirection,
+      sort: 'desc',
     },
   ])
 
   // Defines the cells for the columns and how they should be rendered
-  const columns: GridColDef[] = [
+  const columns = [
     {
       field: 'name',
       headerName: 'Name',
@@ -63,7 +55,7 @@ function BeerGrid(): JSX.Element {
   ]
 
   // Converts the data from the API call to data readable by DataGrid
-  const dataGridBeerData: GridRowsProp = useMemo(() => {
+  const dataGridBeerData = useMemo(() => {
     return (
       data?.map((beer) => {
         const dryHopped = !!beer.ingredients.hops.find(
